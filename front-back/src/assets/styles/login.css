@@ -1,0 +1,90 @@
+/* Estilos generales para el contenedor de login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #011237; /* Azul oscuro */
+    border-radius: 15px;
+    border: 2px solid #c0392b; /* Rojo Fórmula 1 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Sombra profunda */
+}
+
+/* Título */
+.login-container h3 {
+    color: #c0392b; /* Rojo Fórmula 1 */
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Estilos del formulario de login */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estilos para los inputs */
+.login-input {
+    padding: 12px;
+    border: 1px solid #c0392b; /* Rojo Fórmula 1 */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #011237; /* Azul oscuro */
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocarse en los inputs */
+.login-input:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+/* Estilos del botón */
+.login-button {
+    padding: 12px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover del botón */
+.login-button:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 102, 102, 0.7);
+}
+
+/* Estilos para el enlace de registro */
+.login-link {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.login-link a {
+    color: #c0392b; /* Rojo Fórmula 1 */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

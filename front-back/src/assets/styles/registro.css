@@ -1,0 +1,138 @@
+/* Estilos generales para el contenedor */
+.registro-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #011237; /* Azul oscuro */
+    border-radius: 15px;
+    border: 2px solid #c0392b; /* Rojo Fórmula 1 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Sombra profunda */
+}
+
+/* Título */
+.registro-container h3 {
+    color: #c0392b; /* Rojo Fórmula 1 */
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+/* Estilos del formulario de registro */
+.registro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estilos para los inputs y selects */
+.registro-input {
+    padding: 12px;
+    border: 1px solid #c0392b; /* Rojo Fórmula 1 */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #011237; /* Azul oscuro */
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocarse */
+.registro-input:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+/* Estilos para los selects */
+select.registro-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"%3E%3Cpath fill="none" d="M0 0h20v20H0z"/%3E%3Cpath d="M5 7l5 5 5-5z" fill="%236c63ff"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Estilos para el botón */
+.registro-button {
+    padding: 12px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+/* Estilo uniforme para todos los <select> */
+.form-select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Estilo cuando hay foco */
+.form-select:focus {
+    border-color: #ffcc00;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 204, 0, 0.5);
+}
+
+/* Estilo para mensajes de error */
+.input-error {
+    display: block;
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilo cuando hay error en el select */
+.form-select.error {
+    border-color: #d9534f;
+    background-color: #ffe6e6;
+}
+
+/* Hover del botón */
+.registro-button:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 102, 102, 0.7);
+}
+
+/* Estilos para el enlace de login */
+.registro-link {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.registro-link a {
+    color: #c0392b; /* Rojo Fórmula 1 */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.registro-link a:hover {
+    text-decoration: underline;
+}

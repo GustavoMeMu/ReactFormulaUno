@@ -1,0 +1,96 @@
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco translúcido */
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #888;
+    outline: none;
+}
+
+button {
+    display: block;
+    width: 10%;
+    padding: 0.3rem;
+    background-color: #ffffff;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#guardar {
+    background-color: #011237; /* Verde */
+    width: 30%;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#guardar:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+#guardar:active {
+    background-color: #388e3c; /* Verde más oscuro */
+    transform: translateY(0);
+}
+#atras {
+    background-color: #ffffff; /* Verde */
+    width: 30%;
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#atras:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px); /* Efecto de elevación */
+    color: #fff;
+}
+
+#atras:active {
+    background-color: #8e3838; /* Verde más oscuro */
+    transform: translateY(0);
+}
