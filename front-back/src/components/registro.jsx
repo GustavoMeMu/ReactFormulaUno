@@ -66,7 +66,7 @@ const Registro = () => {
                 <input type="password" placeholder="Contraseña" {...register("password", validaciones.password)} />
                 {errors.password && <p className="error-message">{errors.password.message}</p>}
 
-{/*                 <select className="form-select" {...register("rol", validaciones.rol)}>
+                <select className="form-select" {...register("rol", validaciones.rol)}>
                     <option value="">Selecciona un estado</option>
                     <option value="Activo">Activo</option>
                     <option value="Inactivo">Inactivo</option>
@@ -78,7 +78,7 @@ const Registro = () => {
                     <option value="0">Admin</option>
                     <option value="1">Usuario</option>
                 </select>
-                {errors.estado && <p className="error-message">{errors.estado.message}</p>} */}
+                {errors.estado && <p className="error-message">{errors.estado.message}</p>}
 
                 <button type="submit">Registrar</button>
             </form>

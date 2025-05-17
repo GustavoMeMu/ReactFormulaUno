@@ -9,14 +9,14 @@ const validaciones = {
     nombre: {
         required: "El nombre es obligatorio",
         pattern: {
-            value: /^[a-zA-Z\s]+$/,
+            value: /^[a-zA-Z- _\s]+$/,
             message: "Solo se permiten letras y espacios"
         }
     },
     pais: {
         required: "El país es obligatorio",
         pattern: {
-            value: /^[a-zA-Z\s]+$/,
+            value: /^[a-zA-Z- _\s]+$/,
             message: "Solo se permiten letras y espacios"
         }
     },

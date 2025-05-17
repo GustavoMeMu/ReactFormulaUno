@@ -16,14 +16,14 @@ const CrearPiloto = () => {
         nombre: {
             required: "El campo NOMBRE es obligatorio",
             pattern: {
-                value: /^[a-zA-Z]+$/, 
+                value: /^[a-zA-Z- _]+$/, 
                 message: "Solo se permiten LETRAS"
             }
         },
         equipo: {
             required: "El campo EQUIPO es obligatorio",
             pattern: {
-                value: /^[a-zA-Z\s]+$/,
+                value: /^[a-zA-Z- _\s]+$/,
                 message: "Solo se permiten LETRAS"
             }
         },

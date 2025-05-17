@@ -15,7 +15,7 @@ const CrearPista = () => {
         nombre: {
             required: "El nombre es obligatorio",
             pattern: {
-                value: /^[a-zA-Z\s]+$/,
+                value: /^[a-zA-Z- _\s]+$/,
                 message: "El nombre solo puede contener letras y espacios"
             }
         },

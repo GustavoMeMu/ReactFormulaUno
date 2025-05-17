@@ -476,3 +476,25 @@ button {
     
     color: #ffffff; /* Mantener el texto blanco */
 }
+
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+#container {
+    margin: 30px auto;
+    font-family: 'Segoe UI', sans-serif;
+}

@@ -18,8 +18,10 @@ import FormEditarMaximos from '../components/form.editar.maximos';
 import DetalleGanador from '../components/DetalleGanador';
 import DetallePista from '../components/DetallePista';
 import DetallePiloto from '../components/DetallePiloto';
-import RutasPublicas from '../routes/RutasPublicas.jsx'
-import RutasPrivadas from '../routes/RutasPrivadas.jsx'
+import RutasPublicas from '../routes/RutasPublicas.jsx';
+import RutasPrivadas from '../routes/RutasPrivadas.jsx';
+import Rol from '../components/rol.jsx';
+import EditarUsuario from '../components/form.editar.usuarios.jsx';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path="/maximosGanadores/detalle/:nombre" element={<RutasPrivadas><DetalleGanador /></RutasPrivadas>} />
         <Route path="/pista/:nombre" element={<RutasPrivadas><DetallePista /></RutasPrivadas>} />
         <Route path="/piloto/:nombre" element={<RutasPrivadas><DetallePiloto /></RutasPrivadas>} />
+        <Route path="/usuarios" element={<RutasPrivadas><Rol/></RutasPrivadas>} />
+        <Route path="/usuarios/editar/:nombre" element={<RutasPrivadas><EditarUsuario/></RutasPrivadas>} />
       </Routes>
       <Footer />
     </BrowserRouter>

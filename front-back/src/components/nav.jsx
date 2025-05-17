@@ -15,9 +15,10 @@ const Nav = () => {
     };
 
     const audioRef = useRef(new Audio(f1));
-    const {usuario, cerrar_sesion } = useContext(Contexto);
-    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+    const { usuario, cerrar_sesion } = useContext(Contexto);
+    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
     const navegacion = useNavigate();
+    const navigate = useNavigate();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Estado para controlar el desplegable
 
     const reproducirAudio = () => {
@@ -34,7 +35,9 @@ const Nav = () => {
         cerrar_sesion();
         navegacion("/login", { replace: true });
     };
-
+    const irARol = (nombre) => {
+        navigate(`/rol`);
+    };
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
@@ -75,6 +78,14 @@ const Nav = () => {
                                         </button>
                                         <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
                                             <Link
+                                                to="/usuarios"
+                                                onClick={irARol}
+                                                style={{ ...linkStyles, marginRight: 0, borderRadius: 0, padding: "0.5rem 1rem" }}
+                                                className="btn btn-light btn-sm w-100 text-start"
+                                            >
+                                                <i className="bi bi-person-gear me-2"></i>Rol
+                                            </Link>
+                                            <Link
                                                 to="/login"
                                                 onClick={finalizar_sesion}
                                                 style={{ ...linkStyles, marginRight: 0, borderRadius: 0, padding: "0.5rem 1rem" }}
@@ -82,7 +93,7 @@ const Nav = () => {
                                             >
                                                 <i className="bi bi-box-arrow-right me-2"></i>Cerrar sesión
                                             </Link>
-                                           
+
                                         </div>
                                     </div>
                                 </>
