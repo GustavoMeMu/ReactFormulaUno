@@ -488,7 +488,19 @@ select {
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
-
+h2{
+    background-color: #011237;
+    color : white;
+}
+h3{
+    color : white;
+    background-color: #011237;
+}
+p{
+    background-color: #011237;
+    color : white;
+    
+}
 input[type="text"]:focus,
 select:focus {
     border-color: #ff0000;

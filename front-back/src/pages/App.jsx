@@ -22,6 +22,7 @@ import RutasPublicas from '../routes/RutasPublicas.jsx';
 import RutasPrivadas from '../routes/RutasPrivadas.jsx';
 import Rol from '../components/rol.jsx';
 import EditarUsuario from '../components/form.editar.usuarios.jsx';
+import Imagenes from '../components/imagenes.jsx';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/piloto/:nombre" element={<RutasPrivadas><DetallePiloto /></RutasPrivadas>} />
         <Route path="/usuarios" element={<RutasPrivadas><Rol/></RutasPrivadas>} />
         <Route path="/usuarios/editar/:nombre" element={<RutasPrivadas><EditarUsuario/></RutasPrivadas>} />
+        <Route path="/imagenes" element={<RutasPrivadas><Imagenes/></RutasPrivadas>} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -60,20 +60,23 @@ const Nav = () => {
                                         style={linkStyles}
                                         className="btn btn-outline-dark btn-lg"
                                     >
-                                        <i className="bi bi-house-door me-2"></i>Inicio
+                                        <i className="bi bi-house-door me-2"></i> Inicio
                                     </Link>
                                     <Link to="/pilotos" style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                        <i className="bi bi-car-front-fill me-2"></i>Pilotos
+                                        <i className="bi bi-car-front-fill me-2"></i> Pilotos
                                     </Link>
                                     <Link to="/pistas" style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                        <i className="bi bi-sign-turn-slight-left me-2"></i>Pistas
+                                        <i className="bi bi-sign-turn-slight-left me-2"></i> Pistas
                                     </Link>
                                     <Link to="/maximos_ganadores" style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                        <i className="bi bi-trophy me-2"></i>Máximos Ganadores
+                                        <i className="bi bi-trophy me-2"></i> Máximos Ganadores
+                                    </Link>
+                                    <Link to="/imagenes" style={linkStyles} className="btn btn-outline-dark btn-lg">
+                                        <i class="bi bi-images"></i> Imagenes
                                     </Link>
                                     <div className="dropdown">
                                         <button onClick={toggleDropdown} style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                            <i className="bi bi-person-circle me-2"></i>
+                                            <i className="bi bi-person-circle me-2"></i> 
                                             {usuario1.usuario}
                                         </button>
                                         <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
@@ -100,10 +103,10 @@ const Nav = () => {
                             ) : (
                                 <>
                                     <Link to="/registro" style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                        <i className="bi bi-person-plus me-2"></i>Registro
+                                        <i className="bi bi-person-plus me-2"></i> Registro
                                     </Link>
                                     <Link to="/login" style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                        <i className="bi bi-box-arrow-in-right me-2"></i>Login
+                                        <i className="bi bi-box-arrow-in-right me-2"></i> Login
                                     </Link>
                                 </>
                             )}
