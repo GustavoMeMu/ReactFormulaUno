@@ -90,7 +90,7 @@ const DetallePista = () => {
     };
 
     useEffect(() => {
-        fetch(`http://192.168.4.239:3001/pista/${(nombre)}`)
+        fetch(`http://localhost:3001/pista/${(nombre)}`)
             .then((res) => res.json())
             .then((data) => {
                 setPista(data);

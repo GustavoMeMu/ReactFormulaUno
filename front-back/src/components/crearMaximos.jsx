@@ -34,7 +34,7 @@ const CrearMaximoGanador = () => {
         }
 
         try {
-            const respuesta = await fetch("http://192.168.4.239:3001/agregarMaximoGanador", {
+            const respuesta = await fetch("http://localhost:3001/agregarMaximoGanador", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

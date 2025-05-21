@@ -32,7 +32,7 @@ const DetalleGanador = () => {
     };
 
     useEffect(() => {
-        fetch(`http://192.168.4.239:3001/maximoGanador/${nombre}`)
+        fetch(`http://localhost:3001/maximoGanador/${nombre}`)
             .then((response) => response.json())
             .then((data) => setGanador(data))
             .catch((error) =>

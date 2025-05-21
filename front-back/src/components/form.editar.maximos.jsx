@@ -60,7 +60,7 @@ const EditarMaximoGanador = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch(`http://192.168.4.239:3001/maximoGanador/${nombreParam}`)
+        fetch(`http://localhost:3001/maximoGanador/${nombreParam}`)
             .then((res) => res.json())
             .then((data) => {
                 setGanador(data);
@@ -75,7 +75,7 @@ const EditarMaximoGanador = () => {
 
     const onSubmit = async (data) => {
         try {
-            await fetch(`http://192.168.4.239:3001/editarMaximoGanador/${nombreParam}`, {
+            await fetch(`http://localhost:3001/editarMaximoGanador/${nombreParam}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" , "Autorizacion": "Back " + usuario1.token },
                 body: JSON.stringify(data)

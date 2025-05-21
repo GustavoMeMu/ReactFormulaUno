@@ -11,7 +11,7 @@ const MaximosGanadores = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch("http://192.168.4.239:3001/maximosGanadores")
+        fetch("http://localhost:3001/maximosGanadores")
             .then((response) => response.json())
             .then((data) => setGanadores(data))
             .catch((error) => console.error("Error fetching maximos ganadores:", error));
@@ -30,7 +30,7 @@ const MaximosGanadores = () => {
         if (!confirmar) return;
 
         try {
-            const res = await fetch(`http://192.168.4.239:3001/eliminarMaximoGanador/${nombre}`, {
+            const res = await fetch(`http://localhost:3001/eliminarMaximoGanador/${nombre}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token }
             });

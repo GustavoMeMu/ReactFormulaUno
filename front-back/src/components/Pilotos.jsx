@@ -11,7 +11,7 @@ const Pilotos = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch("http://192.168.4.239:3001/pilotos")
+        fetch("http://localhost:3001/pilotos")
             .then((response) => response.json())
             .then((data) => setPilotos(data))
             .catch((error) => console.error("Error fetching pilotos:", error));
@@ -30,7 +30,7 @@ const Pilotos = () => {
         if (!confirmar) return;
 
         try {
-            const res = await fetch(`http://192.168.4.239:3001/eliminarPiloto/${nombre}`, {
+            const res = await fetch(`http://localhost:3001/eliminarPiloto/${nombre}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token }
             });

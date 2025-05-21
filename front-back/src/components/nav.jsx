@@ -13,7 +13,8 @@ const Nav = () => {
         textDecoration: "none",
         color: "#011237"
     };
-
+// http://192.168.4.239:3001
+// http://localhost:3001
     const audioRef = useRef(new Audio(f1));
     const { usuario, cerrar_sesion } = useContext(Contexto);
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;

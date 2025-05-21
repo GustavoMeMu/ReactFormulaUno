@@ -9,7 +9,7 @@ const Rol = () => {
 
 
     useEffect(() => {
-        fetch("http://192.168.4.239:3001/usuarios")
+        fetch("http://localhost:3001/usuarios")
             .then((response) => response.json())
             .then((data) => setUsuarios(data))
             .catch((error) => console.error("Error al obtener usuarios:", error));

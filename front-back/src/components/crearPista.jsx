@@ -44,7 +44,7 @@ const CrearPista = () => {
 
     const crearPista = async (data) => {
         try {
-            const res = await fetch("http://192.168.4.239:3001/agregarPista", {
+            const res = await fetch("http://localhost:3001/agregarPista", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

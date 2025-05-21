@@ -28,7 +28,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://192.168.4.239:3001/login", {
+    fetch("http://localhost:3001/login", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({ "usuario": data.usuario, "password": data.password })

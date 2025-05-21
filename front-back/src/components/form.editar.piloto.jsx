@@ -48,7 +48,7 @@ const EditarPiloto = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch(`http://192.168.4.239:3001/piloto/${nombreParam}`)
+        fetch(`http://localhost:3001/piloto/${nombreParam}`)
             .then((res) => res.json())
             .then((data) => {
                 setPiloto(data);
@@ -62,7 +62,7 @@ const EditarPiloto = () => {
 
     const onSubmit = async (data) => {
         try {
-            await fetch(`http://192.168.4.239:3001/editarPiloto/${nombreParam}`, {
+            await fetch(`http://localhost:3001/editarPiloto/${nombreParam}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token },
                 body: JSON.stringify(data)

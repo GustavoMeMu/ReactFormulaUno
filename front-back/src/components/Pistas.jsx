@@ -12,7 +12,7 @@ const Pistas = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch("http://192.168.4.239:3001/pistas")
+        fetch("http://localhost:3001/pistas")
             .then(res => res.json())
             .then(data => setPistas(data))
             .catch(err => console.error("Error al cargar pistas:", err));
@@ -31,7 +31,7 @@ const Pistas = () => {
         if (!confirmar) return;
 
         try {
-            const res = await fetch(`http://192.168.4.239:3001/eliminarPista/${nombre}`, {
+            const res = await fetch(`http://localhost:3001/eliminarPista/${nombre}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token }
             });
