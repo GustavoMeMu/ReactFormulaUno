@@ -71,23 +71,28 @@ const Nav = () => {
                                     <Link to="/maximos_ganadores" style={linkStyles} className="btn btn-outline-dark btn-lg">
                                         <i className="bi bi-trophy me-2"></i> Máximos Ganadores
                                     </Link>
+                                    {usuario1.estado === 0 &&
+                                    
                                     <Link to="/imagenes" style={linkStyles} className="btn btn-outline-dark btn-lg">
                                         <i class="bi bi-images"></i> Imagenes
                                     </Link>
+                                    }
                                     <div className="dropdown">
                                         <button onClick={toggleDropdown} style={linkStyles} className="btn btn-outline-dark btn-lg">
                                             <i className="bi bi-person-circle me-2"></i>
                                             {usuario1.usuario}
                                         </button>
                                         <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
+                                            {usuario1.estado=== 0 && 
                                             <Link
-                                                to="/usuarios"
-                                                onClick={irARol}
-                                                style={{ ...linkStyles, marginRight: 0, borderRadius: 0, padding: "0.5rem 1rem" }}
-                                                className="btn btn-light btn-sm w-100 text-start"
+                                            to="/usuarios"
+                                            onClick={irARol}
+                                            style={{ ...linkStyles, marginRight: 0, borderRadius: 0, padding: "0.5rem 1rem" }}
+                                            className="btn btn-light btn-sm w-100 text-start"
                                             >
                                                 <i className="bi bi-person-gear me-2"></i>Rol
                                             </Link>
+                                            }
                                             <Link
                                                 to="/login"
                                                 onClick={finalizar_sesion}

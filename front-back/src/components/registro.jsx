@@ -35,7 +35,7 @@ const Registro = () => {
     };
 
     const onSubmit = (data) => {
-        fetch("http://localhost:3001/registro", {
+        fetch("http://192.168.4.239:3001/registro", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)

@@ -3,13 +3,15 @@ import { useNavigate } from "react-router-dom";
 import '../assets/styles/editar.css';
 import Contexto from "../context/Contexto";
 import { useContext } from 'react'
+
 const Pilotos = () => {
     const [pilotos, setPilotos] = useState([]);
     const navigate = useNavigate();
     const { usuario } = useContext(Contexto);
-    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+
     useEffect(() => {
-        fetch("http://localhost:3001/pilotos")
+        fetch("http://192.168.4.239:3001/pilotos")
             .then((response) => response.json())
             .then((data) => setPilotos(data))
             .catch((error) => console.error("Error fetching pilotos:", error));
@@ -28,7 +30,7 @@ const Pilotos = () => {
         if (!confirmar) return;
 
         try {
-            const res = await fetch(`http://localhost:3001/eliminarPiloto/${nombre}`, {
+            const res = await fetch(`http://192.168.4.239:3001/eliminarPiloto/${nombre}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token }
             });
@@ -37,7 +39,6 @@ const Pilotos = () => {
 
             if (res.ok) {
                 alert("Piloto eliminado correctamente");
-
                 setPilotos(pilotos.filter((p) => p.nombre !== nombre));
             } else {
                 alert(`Error: ${data.Error || "No se pudo eliminar el piloto"}`);
@@ -51,12 +52,16 @@ const Pilotos = () => {
     return (
         <div className="container">
             <div className="contentPilotos">
-                <button
-                    onClick={irACrear}
-                    className="boton-agregar"
-                >
-                    ➕ Crear Piloto
-                </button>
+                {/* Botón de Crear Piloto */}
+                {usuario1.estado === 0 && (
+                    <button
+                        onClick={irACrear}
+                        className="boton-agregar"
+                    >
+                        ➕ Crear Piloto
+                    </button>
+                )}
+
                 <ul>
                     {pilotos.map((piloto) => (
                         <li key={piloto.id}>
@@ -66,20 +71,27 @@ const Pilotos = () => {
                             >
                                 {piloto.nombre}
                             </span>
-                            <div className="botones-accion"> {/* Aquí es donde debes envolver los botones */}
-                                <button
-                                    onClick={() => irAEditar(piloto.nombre)}
-                                    className="boton-editar"
-                                >
-                                    ✏️ Editar
-                                </button>
-                                <button
-                                    onClick={() => eliminarPiloto(piloto.nombre)}
-                                    className="boton-eliminar"
-                                >
-                                    🗑️ Eliminar
-                                </button>
-                            </div> {/* Cierre del div botones-accion */}
+                            
+                            <div className="botones-accion">
+                                {/* Botón de Editar */}
+                                {usuario1.estado === 0 && (
+                                    <button
+                                        onClick={() => irAEditar(piloto.nombre)}
+                                        className="boton-editar"
+                                    >
+                                        ✏️ Editar
+                                    </button>
+                                )}
+                                {/* Botón de Eliminar */}
+                                {usuario1.estado === 0 && (
+                                    <button
+                                        onClick={() => eliminarPiloto(piloto.nombre)}
+                                        className="boton-eliminar"
+                                    >
+                                        🗑️ Eliminar
+                                    </button>
+                                )}
+                            </div>
                         </li>
                     ))}
                 </ul>

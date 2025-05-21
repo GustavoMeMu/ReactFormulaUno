@@ -112,7 +112,7 @@ const DetallePiloto = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3001/piloto/${encodeURIComponent(nombre)}`)
+        fetch(`http://192.168.4.239:3001/piloto/${encodeURIComponent(nombre)}`)
             .then((res) => res.json())
             .then((data) => {
                 setPiloto(data);

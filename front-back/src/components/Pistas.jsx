@@ -9,9 +9,10 @@ const Pistas = () => {
     const [pistas, setPistas] = useState([]);
     const navigate = useNavigate();
     const { usuario } = useContext(Contexto);
-    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+
     useEffect(() => {
-        fetch("http://localhost:3001/pistas")
+        fetch("http://192.168.4.239:3001/pistas")
             .then(res => res.json())
             .then(data => setPistas(data))
             .catch(err => console.error("Error al cargar pistas:", err));
@@ -30,7 +31,7 @@ const Pistas = () => {
         if (!confirmar) return;
 
         try {
-            const res = await fetch(`http://localhost:3001/eliminarPista/${nombre}`, {
+            const res = await fetch(`http://192.168.4.239:3001/eliminarPista/${nombre}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", "Autorizacion": "Back " + usuario1.token }
             });
@@ -52,26 +53,35 @@ const Pistas = () => {
     return (
         <div className="container">
             <div className="contentPilotos">
-                <button onClick={irACrear} className="boton-agregar">
-                    ➕ Crear Pista
-                </button>
+                {/* Botón de Crear Pista */}
+                {usuario1.estado === 0 && (
+                    <button onClick={irACrear} className="boton-agregar">
+                        ➕ Crear Pista
+                    </button>
+                )}
+                
                 <ul>
                     {pistas.map((pista) => (
                         <li key={pista.id}>
                             <span
                                 className="nombre-clickable"
                                 onClick={() => navigate(`/pista/${pista.nombre}`)}
-                                
                             >
                                 {pista.nombre}
                             </span>
                             <div className="botones-accion">
-                            <button onClick={() => irAEditar(pista.nombre)} className="boton-editar">
-                                ✏️ Editar
-                            </button>
-                            <button onClick={() => eliminarPista(pista.nombre)} className="boton-eliminar">
-                                🗑️ Eliminar
-                            </button>
+                                {/* Botón de Editar */}
+                                {usuario1.estado === 0 && (
+                                    <button onClick={() => irAEditar(pista.nombre)} className="boton-editar">
+                                        ✏️ Editar
+                                    </button>
+                                )}
+                                {/* Botón de Eliminar */}
+                                {usuario1.estado === 0 && (
+                                    <button onClick={() => eliminarPista(pista.nombre)} className="boton-eliminar">
+                                        🗑️ Eliminar
+                                    </button>
+                                )}
                             </div>
                         </li>
                     ))}

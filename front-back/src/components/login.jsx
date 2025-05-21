@@ -28,7 +28,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:3001/login", {
+    fetch("http://192.168.4.239:3001/login", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({ "usuario": data.usuario, "password": data.password })
@@ -37,7 +37,7 @@ const Login = () => {
     .then(respuesta => {
       if (respuesta.token) {
         alert("Bienvenido");
-        login({token:respuesta.token,usuario:respuesta.usuario  }); // Aquí guardás el token en el contexto
+        login({token:respuesta.token,usuario:respuesta.usuario, estado:respuesta.estado}); // Aquí guardás el token en el contexto
         navegacion("/inicio", { replace: true });
       } else {
         alert("Credenciales incorrectas");

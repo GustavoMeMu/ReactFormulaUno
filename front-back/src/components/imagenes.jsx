@@ -8,7 +8,7 @@ const Imagenes = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
-  const API_BASE_URL = 'http://localhost:3001';
+  const API_BASE_URL = 'http://192.168.4.239:3001';
 
   // Función para obtener la lista de imágenes ya subidas 
   const fetchImages = async () => {

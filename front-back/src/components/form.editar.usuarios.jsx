@@ -39,7 +39,7 @@ const EditarUsuario = () => {
     const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
 
     useEffect(() => {
-        fetch(`http://localhost:3001/usuarios/editar/${nombre}`)
+        fetch(`http://192.168.4.239:3001/usuarios/editar/${nombre}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Datos recibidos:", data); // Para depuración
@@ -53,7 +53,7 @@ const EditarUsuario = () => {
 
     const onSubmit = async (data) => {
         try {
-            await fetch(`http://localhost:3001/usuarios/editar/${nombre}`, {
+            await fetch(`http://192.168.4.239:3001/usuarios/editar/${nombre}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
