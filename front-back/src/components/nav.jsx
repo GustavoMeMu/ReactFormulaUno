@@ -76,7 +76,7 @@ const Nav = () => {
                                     </Link>
                                     <div className="dropdown">
                                         <button onClick={toggleDropdown} style={linkStyles} className="btn btn-outline-dark btn-lg">
-                                            <i className="bi bi-person-circle me-2"></i> 
+                                            <i className="bi bi-person-circle me-2"></i>
                                             {usuario1.usuario}
                                         </button>
                                         <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
