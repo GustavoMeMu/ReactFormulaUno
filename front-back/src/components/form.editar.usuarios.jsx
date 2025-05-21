@@ -14,7 +14,7 @@ const validaciones = {
     },
     rol: {
         required: "El rol es obligatorio",
-        validate: value => value === "Activo" || value === "Inactivo" || "Valor no válido"
+        validate: value => value === "Activo" || value === "Inactivo" || value=== "Inhabilitado"|| "Valor no válido"
     },
     estado: {
         required: "El estado es obligatorio",
@@ -89,6 +89,7 @@ const EditarUsuario = () => {
                     <select id="rol" name="rol" {...register("rol", validaciones.rol)}>
                         <option value="Activo">Activo</option>
                         <option value="Inactivo">Inactivo</option>
+                        <option value="Inhabilitado">Inhabilitado</option>
                     </select>
                     {errors.rol && <p className="error-message">{errors.rol.message}</p>}
                 </label>

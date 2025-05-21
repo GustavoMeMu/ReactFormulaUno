@@ -5,8 +5,6 @@ import Contexto from '../context/Contexto.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-
-
 const Login = () => {
   const navegacion = useNavigate();
   const validaciones = {
@@ -35,10 +33,16 @@ const Login = () => {
     })
     .then(respuesta => respuesta.json())
     .then(respuesta => {
+      //  Nueva lógica de validación para el estado del usuario
       if (respuesta.token) {
-        alert("Bienvenido");
-        login({token:respuesta.token,usuario:respuesta.usuario, estado:respuesta.estado}); // Aquí guardás el token en el contexto
-        navegacion("/inicio", { replace: true });
+        // Asumiendo que el estado se devuelve como 'estado' en la respuesta del servidor
+        if (respuesta.rol === "Inhabilitado") { // Si el estado es 1 (inhabilitado)
+          alert("Su cuenta ha sido inhabilitada");
+        } else { // Si el estado no es 1, procede con el inicio de sesión
+          alert("Bienvenido");
+          login({token:respuesta.token,usuario:respuesta.usuario, estado:respuesta.estado, rol:respuesta.rol}); 
+          navegacion("/inicio", { replace: true });
+        }
       } else {
         alert("Credenciales incorrectas");
       }
@@ -50,10 +54,7 @@ const Login = () => {
   };
   
   const { login } = useContext(Contexto);
-  // const inciar_sesion = () => {
-  //   login();
-  //   navegacion("/", { replace: true })
-  // }
+
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">

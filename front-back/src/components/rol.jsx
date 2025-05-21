@@ -24,7 +24,12 @@ const Rol = () => {
                     {usuarios.map((usuario) => (
                         <li key={usuario.nombre}>
                             <span className="nombre">
-                               *USUARIO: {usuario.usuario} *ROL: {usuario.estado === 0 ? "Admin" : "Usuario"}  *ESTADO: {usuario.estado === 0 ? "Activo" : "Inactivo"}
+                               *USUARIO: {usuario.usuario} *ROL: {usuario.estado === 0 ? "Admin" : "Usuario"}  *ESTADO: {
+                                    usuario.rol === "Activo" ? "Activo" :
+                                    usuario.rol === "Inactivo" ? "Inactivo" :
+                                    usuario.rol === "Inhabilitado" ? "Inhabilitado" :
+                                    "Desconocido" // En caso de que el rol tenga un valor inesperado
+                                }
                             </span>
                             <div className="botones-accion"> {/* Aquí es donde debes envolver los botones */}
                                 <button
