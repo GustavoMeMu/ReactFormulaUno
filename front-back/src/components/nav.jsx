@@ -72,12 +72,9 @@ const Nav = () => {
                                     <Link to="/maximos_ganadores" style={linkStyles} className="btn btn-outline-dark btn-lg">
                                         <i className="bi bi-trophy me-2"></i> Máximos Ganadores
                                     </Link>
-                                    {usuario1.estado === 0 &&
-                                    
                                     <Link to="/imagenes" style={linkStyles} className="btn btn-outline-dark btn-lg">
                                         <i class="bi bi-images"></i> Imagenes
                                     </Link>
-                                    }
                                     <div className="dropdown">
                                         <button onClick={toggleDropdown} style={linkStyles} className="btn btn-outline-dark btn-lg">
                                             <i className="bi bi-person-circle me-2"></i>

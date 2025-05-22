@@ -53,7 +53,7 @@ const EditarUsuario = () => {
                 setDatosUsuario(data);
                 setValue("usuario", data.usuario || "");
                 setValue("rol", data.rol || "Inactivo");
-                setValue("estado", data.estado?.toString() || "1");
+                setValue("estado", data.estado || "1");
             })
             .catch((error) => console.error("Error al obtener usuario para edición:", error));
     }, [nombre, setValue]);
