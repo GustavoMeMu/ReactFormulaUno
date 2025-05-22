@@ -33,12 +33,10 @@ const Login = () => {
     })
     .then(respuesta => respuesta.json())
     .then(respuesta => {
-      //  Nueva lógica de validación para el estado del usuario
       if (respuesta.token) {
-        // Asumiendo que el estado se devuelve como 'estado' en la respuesta del servidor
-        if (respuesta.rol === "Inhabilitado") { // Si el estado es 1 (inhabilitado)
+        if (respuesta.rol === "Inhabilitado") { 
           alert("Su cuenta ha sido inhabilitada");
-        } else { // Si el estado no es 1, procede con el inicio de sesión
+        } else { 
           alert("Bienvenido");
           login({token:respuesta.token,usuario:respuesta.usuario, estado:respuesta.estado, rol:respuesta.rol}); 
           navegacion("/inicio", { replace: true });

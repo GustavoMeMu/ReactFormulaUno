@@ -28,10 +28,10 @@ const Rol = () => {
                                     usuario.rol === "Activo" ? "Activo" :
                                     usuario.rol === "Inactivo" ? "Inactivo" :
                                     usuario.rol === "Inhabilitado" ? "Inhabilitado" :
-                                    "Desconocido" // En caso de que el rol tenga un valor inesperado
+                                    "Desconocido" 
                                 }
                             </span>
-                            <div className="botones-accion"> {/* Aquí es donde debes envolver los botones */}
+                            <div className="botones-accion"> 
                                 <button
                                     onClick={() => irAEditar(usuario.usuario)}
                                     className="boton-editar"

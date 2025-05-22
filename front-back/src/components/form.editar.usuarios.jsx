@@ -14,7 +14,7 @@ const validaciones = {
     },
     rol: {
         required: "El rol es obligatorio",
-        validate: value => value === "Activo" || value === "Inactivo" || value=== "Inhabilitado"|| "Valor no válido"
+        validate: value => value === "Activo" || value === "Inactivo" || value === "Inhabilitado" || "Valor no válido"
     },
     estado: {
         required: "El estado es obligatorio",
@@ -36,19 +36,26 @@ const EditarUsuario = () => {
     });
 
     const { usuario } = useContext(Contexto);
-    const usuario1 = typeof usuario !== "object" ? JSON.parse(usuario) : usuario;
+
+    const usuario1 = usuario;
 
     useEffect(() => {
-        fetch(`http://localhost:3001/usuarios/editar/${nombre}`)
-            .then((res) => res.json())
+
+        fetch(`http://localhost:3001/usuarios/${nombre}`)
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                return res.json();
+            })
             .then((data) => {
-                console.log("Datos recibidos:", data); // Para depuración
+                console.log("Datos recibidos para edición:", data);
                 setDatosUsuario(data);
                 setValue("usuario", data.usuario || "");
                 setValue("rol", data.rol || "Inactivo");
                 setValue("estado", data.estado?.toString() || "1");
             })
-            .catch((error) => console.error("Error al obtener usuario:", error));
+            .catch((error) => console.error("Error al obtener usuario para edición:", error));
     }, [nombre, setValue]);
 
     const onSubmit = async (data) => {
@@ -57,7 +64,8 @@ const EditarUsuario = () => {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
-                    "Autorizacion": "Back " + usuario1.token
+
+                    "Autorizacion": "Back " + (usuario1?.token || "")
                 },
                 body: JSON.stringify(data)
             });
@@ -65,6 +73,7 @@ const EditarUsuario = () => {
             navigate("/usuarios");
         } catch (error) {
             console.error("Error al actualizar usuario:", error);
+            alert("Error al actualizar usuario.");
         }
     };
 
